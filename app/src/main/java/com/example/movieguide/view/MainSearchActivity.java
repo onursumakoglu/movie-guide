@@ -50,6 +50,13 @@ public class MainSearchActivity extends AppCompatActivity {
         searchButton = activityMainSearchBinding.searchButton;
         progressBar = activityMainSearchBinding.loadingProgress;
 
+        searchView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                searchView.setIconified(false);
+            }
+        });
+
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
